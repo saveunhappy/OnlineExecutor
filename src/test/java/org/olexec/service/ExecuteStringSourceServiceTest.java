@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.*;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ExecuteStringSourceServiceTest {
@@ -83,5 +85,13 @@ public class ExecuteStringSourceServiceTest {
         System.out.println("---------- Begin ----------");
         System.out.print(res);
         System.out.println("----------- End -----------");
+
+        List<String> list1 = Arrays.asList("a","b","c","d","e","f");
+        List<String> list2 = Arrays.asList("d","e","f","g","h","i");
+        Set setA = new HashSet(list1);
+        Set setB = new HashSet(list2);
+        setA.retainAll(setB);
+        System.out.println(setA);
+
     }
 }

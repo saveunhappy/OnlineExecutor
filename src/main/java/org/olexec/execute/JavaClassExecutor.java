@@ -35,8 +35,8 @@ public class JavaClassExecutor {
 
         // 5. 通过反射调用Class对象的main方法
         try {
-            Method mainMethod = clazz.getMethod("main", new Class[] { String[].class });
-            mainMethod.invoke(null, new String[] { null });
+            Method mainMethod = clazz.getMethod("main", String[].class);
+            mainMethod.invoke(null, (Object) new String[] { null });
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

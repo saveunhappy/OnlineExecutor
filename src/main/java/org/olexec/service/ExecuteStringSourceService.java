@@ -26,7 +26,12 @@ public class ExecuteStringSourceService {
     private static final String NO_OUTPUT = "Nothing.";
 
     public String execute(String source, String systemIn) {
-        DiagnosticCollector<JavaFileObject> compileCollector = new DiagnosticCollector<>(); // 编译结果收集器
+        //这是一个Java工具包中的类，名为DiagnosticCollector，
+        // 它提供了一个简单的方法来收集诊断信息到一个列表中。这些诊断信息通常是与编译
+        // 代码分析或其他类似工具相关的。它实现了DiagnosticListener接口，
+        // 用于接收诊断信息，并将其添加到一个列表中，以便后续处理或分析。
+        // 编译结果收集器
+        DiagnosticCollector<JavaFileObject> compileCollector = new DiagnosticCollector<>();
 
         // 编译源代码
         byte[] classBytes = StringSourceCompiler.compile(source, compileCollector);
